@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center;">
+        <h1>Upload Giph</h1>
+    </div>
+    <form class="upload-form" id="upload-form">
+        <input type="text" placeholder="Add a title for your Gif" id = "title-inp">
+        <input type="file" id = "file-inp">
+        <input type="submit" value="Upload">
+    </form>
+    <div class="bottom-gifs">
+        <div id="left" class="margin-left"></div>
+        <div id="center" class="margin-left"></div>
+        <div id="right" class="margin-left"></div>
+    </div>
+    <script>
+        require('./index.js')
+    </script>
+</body>
+</html>
