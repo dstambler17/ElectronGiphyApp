@@ -7,6 +7,7 @@ const path = require('path')
 const url = require('url')
 const Tray = electron.Tray
 const globalShortcut = electron.globalShortcut
+const MenuItem = electron.MenuItem
 
 let tray = null;
 let win;
@@ -58,7 +59,9 @@ function createWindow () {
   winTwo.on('closed', () => {
     winTwo = null
   });
+
 }
+
 
 app.on('ready', function (){
   createWindow();
@@ -79,6 +82,40 @@ app.on('ready', function (){
       ]
     }
   ]
+
+  //Right click menu
+  const ctxMenu = new Menu()
+  ctxMenu.append(new MenuItem(
+    {
+      label: 'Show Developer Tools',
+      click: function(){
+        win.webContents.openDevTools();
+      }
+    }
+  ))
+  ctxMenu.append(new MenuItem({role: 'reload'}))
+  ctxMenu.append(new MenuItem({ role: 'selectall' }))
+  win.webContents.on('context-menu', function (e, params) {
+    ctxMenu.popup(win, params.x, params.y)
+  })
+
+  //right click menu window two
+  const ctxMenuTwo = new Menu()
+  ctxMenuTwo.append(new MenuItem(
+    {
+      label: 'Show Developer Tools',
+      click: function(){
+        winTwo.webContents.openDevTools();
+      }
+    }
+  ))
+  ctxMenuTwo.append(new MenuItem({ role: 'selectall' }))
+  winTwo.webContents.on('context-menu', function (e, params) {
+    ctxMenuTwo.popup(win, params.x, params.y)
+  })
+
+
+
 
   const contextMenu = Menu.buildFromTemplate(template)
   tray.setContextMenu(contextMenu)
