@@ -7,6 +7,12 @@ Originally Developed September 2019 as a silly side project for the purpose of l
   - Search for giphy based on keywords
   - Download Giphy in the search tab by clicking on it
   - Interact with Destop through global keyboard shortcuts:
+    - Show upload window: alt + 5
+    - Show search window: alt + 6
+    - Close upload window: alt + 1
+    - Close search window: alt + 2
+    - Show all windows: ctrl + shift + s
+    - Close all windows: ctrl + shift + c
 
 ### Technology
  - Written in Electron (HTML, CSS, JavaScript (Node.js))
