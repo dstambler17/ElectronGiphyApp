@@ -1,6 +1,6 @@
 # Electron Giphy App
 Desktop App, built with electron, with my own implementation of the Giphy Api.
-Originally Developed September 2019 as a silly side project for the purpose of learning electron
+Originally Developed September 2019 as a fun side project for the purpose of learning electron
 
 ### Features
   - Upload Giphy through the interface
